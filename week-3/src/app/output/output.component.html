@@ -1,7 +1,7 @@
 <div class="output-container" *ngIf="elements.length != 0">
   <label for="delete">Show delete:</label>
   <input id="delete" (change)="toggleDelete($event)" type="checkbox">
-  <div class="output" [ngClass]="element.color" *ngFor="let element of elements">
+  <div class="output" [ngStyle]="{'background-color': element.color}" *ngFor="let element of elements">
     <p [ngClass]="element.type">{{element.text}}</p>
     <button (click)="onDelete(element.id)" *ngIf="showDelete">Delete</button>
   </div>
