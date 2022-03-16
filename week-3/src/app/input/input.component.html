@@ -6,6 +6,11 @@
   </div>
 
   <div class="input">
+    <label for="font">Font size</label>
+    <input type="number" min="10" max="40" #fontValue id="font" (keyup)="onChangeFont(fontValue.value)" />
+  </div>
+
+  <div class="input">
     <p>Color</p>
     <div class="colors">
       <button (click)="onChangeColor('red')" class="red-color"></button>
@@ -22,5 +27,5 @@
     </div>
   </div>
 
-  <button (click)="onSubmit({text, color, type})">Generate</button>
+  <button (click)="onSubmit({text, color, type, font})">Generate</button>
 </div>

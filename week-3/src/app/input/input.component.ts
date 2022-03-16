@@ -7,6 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class InputComponent {
   text: string = '';
+  font: number = 0;
   color: string = '';
   type: string = '';
   @Input() elements: any;
@@ -23,12 +24,18 @@ export class InputComponent {
     this.type = value;
   }
 
-  onSubmit({ text, color, type }: any) {
-    const arr = this.elements.push({
+  onSubmit({ text, color, type, font }: any) {
+    this.elements.push({
       id: new Date().getTime(),
       text,
       color,
-      type
+      type,
+      font
     })
+    console.log(this.elements);
+  }
+
+  onChangeFont(value: any) {
+    this.font = value
   }
 }
