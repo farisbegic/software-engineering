@@ -7,9 +7,14 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OutputComponent {
   @Input() elements: any;
+  showDelete: boolean = false;
 
   onDelete(value: any):void {
     let index = this.elements.map((element: { id: any; }) => element.id).indexOf(value);
     this.elements.splice(index, 1);
+  }
+
+  toggleDelete(value: any) {
+    this.showDelete = value.target.checked;
   }
 }
