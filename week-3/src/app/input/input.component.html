@@ -1,0 +1,29 @@
+<div class="input-container">
+
+  <div class="input">
+    <label for="text">Text</label>
+    <input type="text" #textValue id="text" (keyup)="onChangeText(textValue.value)" />
+  </div>
+
+  <div class="input">
+    <p>Color</p>
+    <div class="colors">
+      <button (click)="onChangeColor('red')" class="red-color"></button>
+      <button (click)="onChangeColor('green')" class="green-color"></button>
+      <button (click)="onChangeColor('blue')" class="blue-color"></button>
+    </div>
+  </div>
+
+  <div class="input">
+    <p>Style</p>
+    <div class="styles">
+      <button (click)="onChangeType('bold')" class="bold-style">Bold</button>
+      <button (click)="onChangeType('italic')" class="italic-style">Italic</button>
+    </div>
+  </div>
+
+  <button>Generate</button>
+  <p>{{text}}</p>
+  <p>{{color}}</p>
+  <p>{{type}}</p>
+</div>

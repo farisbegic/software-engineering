@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'week-3';
+  text: string = '';
+  color: string = '';
+  type: string = '';
 }
