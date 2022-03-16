@@ -1,5 +1,6 @@
 <div class="output-container" *ngIf="elements.length != 0">
   <div class="output" [ngClass]="element.color" *ngFor="let element of elements">
     <p [ngClass]="element.type">{{element.text}}</p>
+    <button (click)="onDelete(element.id)">Delete</button>
   </div>
 </div>

@@ -24,7 +24,8 @@ export class InputComponent {
   }
 
   onSubmit({ text, color, type }: any) {
-    this.elements.push({
+    const arr = this.elements.push({
+      id: new Date().getTime(),
       text,
       color,
       type
