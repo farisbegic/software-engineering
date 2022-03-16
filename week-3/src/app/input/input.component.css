@@ -17,8 +17,11 @@
 .input button {
   margin: 0 10px;
   height: 30px;
-  border: 0;
   width: 30px;
+}
+
+button:focus {
+  border: none;
 }
 
 .red-color {
