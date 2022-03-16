@@ -22,8 +22,5 @@
     </div>
   </div>
 
-  <button>Generate</button>
-  <p>{{text}}</p>
-  <p>{{color}}</p>
-  <p>{{type}}</p>
+  <button (click)="onSubmit({text, color, type})">Generate</button>
 </div>

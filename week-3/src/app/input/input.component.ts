@@ -6,9 +6,10 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() text: any;
-  @Input() color: any;
-  @Input() type: any;
+  text: string = '';
+  color: string = '';
+  type: string = '';
+  @Input() elements: any;
 
   onChangeText(value: any) {
     this.text = value;
@@ -20,5 +21,13 @@ export class InputComponent {
 
   onChangeType(value: any) {
     this.type = value;
+  }
+
+  onSubmit({ text, color, type }: any) {
+    this.elements.push({
+      text,
+      color,
+      type
+    })
   }
 }
