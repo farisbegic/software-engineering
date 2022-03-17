@@ -32,7 +32,6 @@ export class InputComponent {
       type,
       font
     })
-    console.log(this.elements);
   }
 
   onChangeFont(value: any) {
