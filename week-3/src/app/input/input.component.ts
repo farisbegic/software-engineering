@@ -6,11 +6,11 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
+  @Input() elements: any;
   text: string = '';
   font: number = 0;
   color: string = '';
   type: string = '';
-  @Input() elements: any;
 
   onChangeText(value: any) {
     this.text = value;
