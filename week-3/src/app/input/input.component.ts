@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import Block from "../interfaces/block";
 
 @Component({
   selector: 'app-input',
@@ -6,35 +7,35 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() elements: any;
+  @Output() submit: EventEmitter<Block> = new EventEmitter<Block>();
   text: string = '';
-  font: number = 0;
+  font: string = '';
   color: string = '';
   type: string = '';
 
-  onChangeText(value: any) {
+  onChangeText(value: string) {
     this.text = value;
   }
 
-  onChangeColor(value: any) {
+  onChangeColor(value: string) {
     this.color = value;
   }
 
-  onChangeType(value: any) {
+  onChangeType(value: string) {
     this.type = value;
   }
 
-  onSubmit({ text, color, type, font }: any) {
-    this.elements.push({
-      id: new Date().getTime(),
-      text,
-      color,
-      type,
-      font
-    })
+  onChangeFont(value: string) {
+    this.font = value
   }
 
-  onChangeFont(value: any) {
-    this.font = value
+  onSubmit() {
+    this.submit.emit({
+      id: new Date().getTime(),
+      text: this.text,
+      color: this.color,
+      type: this.type,
+      font: this.font
+    })
   }
 }

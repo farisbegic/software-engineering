@@ -1,2 +1,2 @@
-<app-input [elements]="elements"></app-input>
-<app-output [elements]="elements"></app-output>
+<app-input (submit)="onSubmit($event)"></app-input>
+<app-output (delete)="onDelete($event)" [elements]="elements"></app-output>
