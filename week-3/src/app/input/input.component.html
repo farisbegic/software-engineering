@@ -2,12 +2,12 @@
 
   <div class="input">
     <label for="text">Text</label>
-    <input type="text" #textValue id="text" (keyup)="onChangeText(textValue.value)" />
+    <input type="text" id="text" [(ngModel)]="text" />
   </div>
 
   <div class="input">
     <label for="font">Font size</label>
-    <input type="number" min="10" max="40" #fontValue id="font" (keyup)="onChangeFont(fontValue.value)" />
+    <input type="number" min="10" max="40" id="font" [(ngModel)]="font" />
   </div>
 
   <div class="input">

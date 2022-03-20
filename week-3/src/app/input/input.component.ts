@@ -13,10 +13,6 @@ export class InputComponent {
   color: string = '';
   type: string = '';
 
-  onChangeText(value: string) {
-    this.text = value;
-  }
-
   onChangeColor(value: string) {
     this.color = value;
   }
@@ -25,17 +21,15 @@ export class InputComponent {
     this.type = value;
   }
 
-  onChangeFont(value: string) {
-    this.font = value
-  }
-
   onSubmit() {
-    this.submit.emit({
+    const element = {
       id: new Date().getTime(),
       text: this.text,
       color: this.color,
       type: this.type,
       font: this.font
-    })
+    }
+
+    this.submit.emit(element)
   }
 }
