@@ -7,7 +7,7 @@ import Block from "../interfaces/block";
   styleUrls: ['./output.component.css']
 })
 export class OutputComponent {
-  @Input() elements: any;
+  @Input() elements: Array<Block> = new Array<Block>();
   @Output() delete: EventEmitter<number> = new EventEmitter<number>();
   showDelete: boolean = false;
 
